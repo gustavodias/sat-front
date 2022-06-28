@@ -1,0 +1,10 @@
+<form class="form mat-elevation-z8" novalidate>
+    <h1>Editar Graduação</h1>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Posto</mat-label>
+        <input [(ngModel)]="graduacao.posto" [formControl]="posto" required name="posto" matInput placeholder="Ex. CB EP">
+        <mat-error *ngIf="posto.invalid">{{errorValidPosto()}}</mat-error>
+    </mat-form-field>
+    <button (click)="update()" [disabled]="errorValidPosto()" class="btn btn-success">Atualizar</button>
+    <button type="button" routerLink="/empresas" class="btn btn-danger">Cancelar</button>
+</form>

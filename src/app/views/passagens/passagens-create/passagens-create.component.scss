@@ -1,0 +1,66 @@
+:root {
+    --cor-primaria-success: rgb(75, 200, 138);
+    --cor-hover-success: rgb(116, 158, 137);
+    --cor-secundaria-success: rgb(27, 66, 50);
+    --cor-primaria-danger: rgb(200, 75, 75);
+    --cor-hover-danger: rgb(158, 116, 116);
+    --cor-secundaria-danger: rgb(58, 22, 22);
+}
+
+.form {
+    width: 20.1%;
+    margin: 2% 5%;
+    padding: 3rem 2rem;
+}
+
+.form h1 {
+    font-size: 2rem;
+    color: royalblue;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    margin: 0.3rem;
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    background-color: royalblue;
+    transition: background .4s;
+}
+
+.btn-success {
+    color: white;
+    background-color: rgb(116, 158, 137), 0.3;
+}
+
+.btn-success:hover {
+    background-color: rgb(75, 200, 138);
+}
+
+.btn-success:active {
+    color: rgb(116, 158, 137);
+    background-color: white;
+}
+
+.btn-danger {
+    color: white;
+    background-color: rgb(141, 37, 24), 0.3;
+}
+
+.btn-danger:hover {
+    background-color: rgb(231, 56, 33);
+}
+
+.btn-danger:active {
+    color: rgb(231, 56, 33);
+    background-color: rgb(236, 236, 236);
+}

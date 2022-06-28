@@ -1,26 +1,37 @@
-<mat-sidenav-container class="container">
-  <mat-sidenav mode="side" opened>
-    <!-- Body -->
-    <mat-nav-list>
-      <a routerLink="" mat-list-item>
-        <i class="material-icons">home</i>
-        Home
-      </a>
-      <a mat-list-item>
-        <i class="material-icons">directions_bus</i>
-        Empresas
-      </a>
-      <a mat-list-item>
-        <i class="material-icons">all_out</i>
-        Graduacões
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
+<app-header [inputSideNav]="sideNav"></app-header>
 
-  <mat-sidenav-content>
-      <router-outlet></router-outlet>
-  </mat-sidenav-content>
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #sideNav class="sidenav" mode="side">
+        <mat-nav-list>
+            <a mat-list-item routerLink="">
+                <i class="material-icons">home</i> Home
+            </a>
+            <a routerLink="/empresas" mat-list-item>
+                <i class="material-icons">directions_bus</i>Empresas
+            </a>
+            <a routerLink="/graduacoes" mat-list-item>
+                <i class="material-icons">all_out</i>Graduações
+            </a>
+            <a routerLink="/passagens" mat-list-item>
+                <i class="material-icons">payment</i>Passagens
+            </a>
+            <a routerLink="/cotas" mat-list-item>
+                <i class="material-icons">monetization_on</i>Cotas
+            </a>
+            <a routerLink="/pessoas" mat-list-item>
+                <i class="material-icons">people</i>Pessoas
+            </a>
+            <a routerLink="/trajetos" mat-list-item>
+                <i class="material-icons">map</i>Trajetos
+            </a>
+            <a routerLink="/relatorios" mat-list-item>
+                <i class="material-icons">description</i>Relatorios
+            </a>
+        </mat-nav-list>
+    </mat-drawer>
 
+    <div>
+        <router-outlet></router-outlet>
+    </div>
 
-
-</mat-sidenav-container>
+</mat-drawer-container>

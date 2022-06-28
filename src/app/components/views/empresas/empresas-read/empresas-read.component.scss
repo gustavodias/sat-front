@@ -1,0 +1,43 @@
+.content {
+    width: 90%;
+    margin: 1.4rem auto auto auto;
+}
+
+.title {
+    margin-bottom: 3rem;
+}
+
+.title h1 {
+    font-size: 2rem;
+    color: royalblue;
+    font-weight: 500;
+}
+
+.table {
+    width: 100%;
+}
+
+.create {
+    margin: 1.4rem;
+}
+
+.bt {
+    width: 15%;
+    color: white;
+    background-color: royalblue;
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 5px 5px 3px rgb(182, 182, 182);
+}
+
+#edit {
+    color: royalblue;
+    margin-right: 1.1rem;
+}
+
+#delete {
+    color: rgb(255, 42, 42);
+}

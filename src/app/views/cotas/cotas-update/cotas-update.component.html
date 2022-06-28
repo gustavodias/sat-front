@@ -1,0 +1,17 @@
+<form class="form mat-elevation-z8" novalidate>
+    <h1>Editar Cota</h1>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-select value="2021" [(ngModel)]="cota.gradPosto" [formControl]="gradPosto" required name="gradPosto" matNativeControl placeholder="Graduação *">
+            <mat-option *ngFor="let graduacao of graduacoes" [value]="graduacao.cod">{{graduacao.posto}}</mat-option>
+            <mat-error *ngIf="gradPosto.invalid">{{errorValidGrad()}}</mat-error>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Valor</mat-label>
+        <input type="number" [(ngModel)]="cota.valor" [formControl]="valor" required name="valor" matInput placeholder="Ex. 4.50" step="0.01" min="0.01">
+        <mat-error *ngIf="valor.invalid">{{errorValidValor()}}</mat-error>
+    </mat-form-field>
+    <button (click)="update()" [disabled]="errorValidValor()" [disabled]="errorValidValor()" class="btn btn-success">Atualizar</button>
+    <button type="button" routerLink="/cotas" class="btn btn-danger">Cancelar</button>
+</form>

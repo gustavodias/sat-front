@@ -1,0 +1,9 @@
+<form class="form mat-elevation-z8" novalidate>
+    <h1>Deletar Empresa</h1>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input [(ngModel)]="empresa.nome" name="nome" disabled matInput placeholder="Ex. MOBI PE">
+    </mat-form-field>
+    <button (click)="deletar()" class=" btn btn-success">Deletar</button>
+    <button type="button" routerLink="/empresas" class="btn btn-danger">Cancelar</button>
+</form>

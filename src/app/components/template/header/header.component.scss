@@ -1,9 +1,29 @@
 .header{
-    justify-content: center;
     background-color:royalblue;
     height: 10%;
 }
 
-span{
-    color:honeydew;
+.centro{
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    background-color: antiquewhite;
 }
+
+.toggle{
+    border: 0;
+    background-color: royalblue;
+    color: white;
+}
+
+.centro span{
+    color:honeydew;
+    font-weight: 600;
+    font-size: xx-large;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%)
+}
+
+

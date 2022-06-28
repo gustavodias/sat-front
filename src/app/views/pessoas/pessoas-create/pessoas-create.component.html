@@ -1,0 +1,77 @@
+<form class="form mat-elevation-z8" novalidate>
+    <h1>Cadastrar Nova Pessoa</h1>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>TIPO</mat-label>
+        <mat-select value="2021" [(ngModel)]="pessoa.tipo" [formControl]="tipo" required name="tipo" matNativeControl placeholder="TIPO *">
+            <mat-option value="CIVIL">CIVIL</mat-option>
+            <mat-option value="MILITAR">MILITAR</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tipo.invalid">{{errorValidTipo()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>GRADUAÇÃO</mat-label>
+        <mat-select value="2021" [(ngModel)]="pessoa.graduacao" [formControl]="graduacao" required name="graduacao" matNativeControl placeholder="GRADUAÇÃO *">
+            <mat-option *ngFor="let graduacao of graduacoes" [value]="graduacao.cod">{{graduacao.posto}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="graduacao.invalid">{{errorValidGraduacao()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>TURMA</mat-label>
+        <mat-select value="2021" [(ngModel)]="pessoa.turma" [formControl]="turma" required name="turma" matNativeControl placeholder="TURMA *">
+            <mat-option value="ALPHA">ALPHA</mat-option>
+            <mat-option value="BRAVO">BRAVO</mat-option>
+            <mat-option value="N/A">N/A</mat-option>
+        </mat-select>
+        <mat-error *ngIf="turma.invalid">{{errorValidTurma()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>ANO</mat-label>
+        <input type="number" [(ngModel)]="pessoa.ano" [formControl]="ano" required name="ano" matInput placeholder="Ex.: 2021, 2017, 2016...">
+        <mat-error *ngIf="ano.invalid">{{errorValidAno()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>PREC-CP</mat-label>
+        <input type="number" [(ngModel)]="pessoa.preccp" [formControl]="preccp" required name="preccp" matInput placeholder="Ex. 123456789100">
+        <mat-error *ngIf="preccp.invalid">{{errorValidPreccp()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>NOME DE GUERRA</mat-label>
+        <input type="text" [(ngModel)]="pessoa.nomeGuerra" [formControl]="nomeGuerra" required name="nomeGuerra" matInput placeholder="Ex. CIVIL OU MILITAR">
+        <mat-error *ngIf="nomeGuerra.invalid">{{errorValidGuerra()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width2" appearance="fill">
+        <mat-label>NOME COMPLETO</mat-label>
+        <input type="text" [(ngModel)]="pessoa.nome" [formControl]="nome" required name="nome" matInput placeholder="Ex. FULANO DA SILVA">
+        <mat-error *ngIf="nome.invalid">{{errorValidNome()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width2" appearance="fill">
+        <mat-label>ENDEREÇO</mat-label>
+        <input type="text" [(ngModel)]="pessoa.endereco" [formControl]="endereco" required name="endereco" matInput placeholder="Ex. RUA X, BOA VISTA, RECIFE">
+        <mat-error *ngIf="endereco.invalid">{{errorValidEndereco()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>PERCURSO</mat-label>
+        <input type="text" [(ngModel)]="pessoa.percurso" [formControl]="percurso" required name="percurso" matInput placeholder="Ex. CAMARAGIBE/RECIFE">
+        <mat-error *ngIf="percurso.invalid">{{errorValidPercurso()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>EMPRESA</mat-label>
+        <mat-select value="2021" [(ngModel)]="pessoa.empresa" [formControl]="empresa" required name="empresa" matNativeControl placeholder="Graduação *">
+            <mat-option *ngFor="let empresa of empresas" [value]="empresa.cod">{{empresa.nome}}</mat-option>
+            <mat-error *ngIf="empresa.invalid">{{errorValidEmpresa()}}</mat-error>
+        </mat-select>
+    </mat-form-field>
+
+    <button (click)="create()" [disabled]=[errorValidGraduacao(),errorValidTipo()] class="btn btn-success">Cadastrar</button>
+    <button type="button" routerLink="/cotas" class="btn btn-danger">Cancelar</button>
+</form>
